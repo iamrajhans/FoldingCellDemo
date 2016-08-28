@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="E9E-ol-hwp">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Table View Controller-->
+        <scene sceneID="lBy-fC-uqR">
+            <objects>
+                <tableViewController id="E9E-ol-hwp" customClass="MainTableViewController" customModule="TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="327" sectionHeaderHeight="28" sectionFooterHeight="28" id="iSc-XH-8Xu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" rowHeight="327" id="OlR-QA-ehx" userLabel="cell" customClass="TableViewFoldingCell" customModule="FoldingCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="327"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OlR-QA-ehx" id="lef-11-Kh2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="326"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyD-z2-vqM">
+                                            <rect key="frame" x="8" y="126" width="584" height="144"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mBa-3q-r4H" customClass="RotatedView" customModule="FoldingCell">
+                                                    <rect key="frame" x="8" y="25" width="568" height="50"/>
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="144" id="AeM-gg-8FO"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYV-qT-jCX" customClass="RotatedView" customModule="FoldingCell">
+                                            <rect key="frame" x="8" y="8" width="584" height="74"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="74" id="dSs-6W-jNk"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fyD-z2-vqM" firstAttribute="top" secondItem="lef-11-Kh2" secondAttribute="topMargin" constant="118" identifier="containerViewTop" id="1Tj-tn-U5U"/>
+                                        <constraint firstItem="wYV-qT-jCX" firstAttribute="leading" secondItem="lef-11-Kh2" secondAttribute="leadingMargin" id="1du-Ne-JP5"/>
+                                        <constraint firstItem="wYV-qT-jCX" firstAttribute="trailing" secondItem="lef-11-Kh2" secondAttribute="trailingMargin" id="FGW-i4-5hr"/>
+                                        <constraint firstItem="fyD-z2-vqM" firstAttribute="trailing" secondItem="lef-11-Kh2" secondAttribute="trailingMargin" id="M84-G4-qyG"/>
+                                        <constraint firstItem="fyD-z2-vqM" firstAttribute="leading" secondItem="lef-11-Kh2" secondAttribute="leadingMargin" id="jL6-yK-j6m"/>
+                                        <constraint firstItem="wYV-qT-jCX" firstAttribute="top" secondItem="lef-11-Kh2" secondAttribute="topMargin" identifier="ForeGroundViewTop" id="rqD-Vh-6vT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="E9E-ol-hwp" id="xzN-l6-Ril"/>
+                            <outlet property="delegate" destination="E9E-ol-hwp" id="19v-gU-DIL"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="foldingCellTableView" destination="iSc-XH-8Xu" id="dJo-tv-NoX"/>
+                        <outlet property="tableView" destination="iSc-XH-8Xu" id="5Ue-Ip-SH1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CoN-2m-Uso" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504" y="433"/>
+        </scene>
+    </scenes>
+</document>
